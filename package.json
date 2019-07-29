@@ -1,0 +1,31 @@
+{
+    "name": "js-performance",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node src/case1.js",
+        "start:no-opt": "node --no-opt src/case1.js",
+        "start:opt-verbose": "node --trace-opt --trace-opt-verbose src/case1.js",
+        "start:bytecode-add10": "node --print-bytecode --print-bytecode-filter=add10 src/case1.js > output.txt",
+        "start:opt-add10": "node --print-opt-code --print-opt-code-filter=add10 src/case1.js > output1.txt",
+        "start:gc-add10": "node --trace_gc src/case1.js > output-gc.txt",
+        "start:prof-add10": "node --prof src/case1.js > output-prof.txt",
+        "start:process-prof": "node --prof-process --preprocess isolate-000002B5298989C0-v8.log > prof.json"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/hjl19911127/js-performance.git"
+    },
+    "keywords": [
+        "performance",
+        "test"
+    ],
+    "author": "huangjialiang",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/hjl19911127/js-performance/issues"
+    },
+    "homepage": "https://github.com/hjl19911127/js-performance#readme"
+}
