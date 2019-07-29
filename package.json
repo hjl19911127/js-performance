@@ -12,7 +12,7 @@
         "start:opt-add10": "node --print-opt-code --print-opt-code-filter=add10 src/case1.js > output1.txt",
         "start:gc-add10": "node --trace_gc src/case1.js > output-gc.txt",
         "start:prof-add10": "node --prof src/case1.js > output-prof.txt",
-        "start:process-prof": "node --prof-process --preprocess isolate-000002B5298989C0-v8.log > prof.json"
+        "start:process-prof": "node --prof-process --preprocess isolate-000001D40279DE80-v8.log > prof.json"
     },
     "repository": {
         "type": "git",
