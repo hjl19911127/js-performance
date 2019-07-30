@@ -7,11 +7,10 @@ function generate(n) {
     return eval(s);
 }
 
-const add10000 = generate(10000);
-
+const func10000 = generate(10000);
 console.time('measure');
 let result = 0;
-for (let i = 0; i < 5000; ++i) {
-    result += add10000(i);
+for (let i = 0; i < 50000; ++i) {
+    result += func10000(i);
 }
 console.timeEnd('measure');

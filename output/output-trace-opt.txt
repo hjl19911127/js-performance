@@ -1,0 +1,10 @@
+[marking 0x00451abedef9 <JSFunction func10 (sfi = 0000023382457469)> for optimized recompilation, reason: small function, ICs with typeinfo: 10/10 (100%), generic ICs: 0/10 (0%)]
+[compiling method 0x00451abedef9 <JSFunction func10 (sfi = 0000023382457469)> using TurboFan]
+[optimizing 0x00451abedef9 <JSFunction func10 (sfi = 0000023382457469)> - took 1.574, 0.718, 0.055 ms]
+[completed optimizing 0x00451abedef9 <JSFunction func10 (sfi = 0000023382457469)>]
+[marking 0x00451abec9c1 <JSFunction (sfi = 00000233824569F1)> for optimized recompilation, reason: hot and stable, ICs with typeinfo: 7/10 (70%), generic ICs: 0/10 (0%)]
+[compiling method 0x00451abec9c1 <JSFunction (sfi = 00000233824569F1)> using TurboFan OSR]
+[optimizing 0x00451abec9c1 <JSFunction (sfi = 00000233824569F1)> - took 0.224, 0.882, 0.062 ms]
+[compiling method 0x00451abec9c1 <JSFunction (sfi = 00000233824569F1)> using TurboFan OSR]
+measure: 223.113ms
+[optimizing 0x00451abec9c1 <JSFunction (sfi = 00000233824569F1)> - took 0.156, 1.970, 0.097 ms]

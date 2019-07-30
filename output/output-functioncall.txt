@@ -1,0 +1,81 @@
+[Handling interrupts: No interrupt flags set]
+[not yet optimizing func20, not enough ticks: 0/2 and ICs changed]
+[Handling interrupts: No interrupt flags set]
+[not yet optimizing func20, not enough ticks: 1/2 and  too large for small function optimization: 143/90]
+[Handling interrupts: No interrupt flags set]
+[marking 0x00d480fee0a1 <JSFunction func20 (sfi = 000002DBBFD57531)> for optimized recompilation, reason: hot and stable, ICs with typeinfo: 20/20 (100%), generic ICs: 0/20 (0%)]
+[compiling method 0x00d480fee0a1 <JSFunction func20 (sfi = 000002DBBFD57531)> using TurboFan]
+[Handling interrupts: No interrupt flags set]
+[not yet optimizing , not enough ticks: 0/2 and  too large for small function optimization: 149/90]
+[Handling interrupts: No interrupt flags set]
+[function func20 is already in optimization queue]
+[Handling interrupts: No interrupt flags set]
+[function func20 is already in optimization queue]
+[Handling interrupts: No interrupt flags set]
+[function func20 is already in optimization queue]
+[Handling interrupts: INSTALL_CODE--- FUNCTION SOURCE (func20) id{0,-1} start{16} ---
+(x) { return 0+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x; }
+--- END ---
+[optimizing 0x00d480fee0a1 <JSFunction func20 (sfi = 000002DBBFD57531)> - took 1.804, 0.995, 0.073 ms]
+[completed optimizing 0x00d480fee0a1 <JSFunction func20 (sfi = 000002DBBFD57531)>]
+]
+[not yet optimizing , not enough ticks: 1/2 and  too large for small function optimization: 149/90]
+[Handling interrupts: No interrupt flags set]
+[marking 0x00d480fec9c1 <JSFunction (sfi = 000002DBBFD56A99)> for optimized recompilation, reason: hot and stable, ICs with typeinfo: 7/10 (70%), generic ICs: 0/10 (0%)]
+[Handling interrupts: No interrupt flags set]
+[compiling method 0x00d480fec9c1 <JSFunction (sfi = 000002DBBFD56A99)> using TurboFan OSR]
+--- FUNCTION SOURCE (D:\Project\sharing\js-performance\src\case-func10.js:) id{1,-1} start{0} ---
+function generate(n) {
+    let s = '(function func' + n + '(x) { return 0';
+    for (let i = 0; i < n; ++i) {
+        s += '+x';
+    }
+    s += '; })';
+    return eval(s);
+}
+
+//generate(10)\uff1a function func10(x) { return 0+x+x+x+x+x+x+x+x+x+x; }
+
+const func10 = generate(20);
+// console.log(func10.toString());
+console.time('measure');
+let result = 0;
+for (let i = 0; i < 5e6; ++i) {
+    result += func10(i);
+}
+console.timeEnd('measure');
+--- END ---
+--- FUNCTION SOURCE (func20) id{1,0} start{16} ---
+(x) { return 0+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x; }
+--- END ---
+INLINE (func20) id{1,0} AS 0 AT <-1:412>
+[optimizing 0x00d480fec9c1 <JSFunction (sfi = 000002DBBFD56A99)> - took 0.219, 1.176, 0.549 ms]
+[Handling interrupts: No interrupt flags set]
+[compiling method 0x00d480fec9c1 <JSFunction (sfi = 000002DBBFD56A99)> using TurboFan OSR]
+--- FUNCTION SOURCE (D:\Project\sharing\js-performance\src\case-func10.js:) id{2,-1} start{0} ---
+function generate(n) {
+    let s = '(function func' + n + '(x) { return 0';
+    for (let i = 0; i < n; ++i) {
+        s += '+x';
+    }
+    s += '; })';
+    return eval(s);
+}
+
+//generate(10)\uff1a function func10(x) { return 0+x+x+x+x+x+x+x+x+x+x; }
+
+const func10 = generate(20);
+// console.log(func10.toString());
+console.time('measure');
+let result = 0;
+for (let i = 0; i < 5e6; ++i) {
+    result += func10(i);
+}
+console.timeEnd('measure');
+--- END ---
+--- FUNCTION SOURCE (func20) id{2,0} start{16} ---
+(x) { return 0+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x; }
+--- END ---
+INLINE (func20) id{2,0} AS 0 AT <-1:412>
+measure: 228.291ms
+[optimizing 0x00d480fec9c1 <JSFunction (sfi = 000002DBBFD56A99)> - took 0.519, 2.436, 0.226 ms]
