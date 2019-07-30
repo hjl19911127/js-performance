@@ -1,2 +1,0 @@
-[24504:000001729B3375C0]       48 ms: Scavenge 2.5 (4.2) -> 2.2 (5.2) MB, 1.6 / 0.0 ms  (average mu = 1.000, current mu = 1.000) allocation failure 
-[24504:000001729B3375C0]       64 ms: Scavenge 2.7 (5.2) -> 2.7 (6.2) MB, 1.5 / 0.0 ms  (average mu = 1.000, current mu = 1.000) allocation failure 

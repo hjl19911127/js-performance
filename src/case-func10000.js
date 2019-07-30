@@ -1,7 +1,5 @@
-const { performance } = require('perf_hooks');
-
 function generate(n) {
-    let s = '(function add' + n + '(x) { return 0';
+    let s = '(function func' + n + '(x) { return 0';
     for (let i = 0; i < n; ++i) {
         s += '+x';
     }
@@ -9,11 +7,11 @@ function generate(n) {
     return eval(s);
 }
 
-const add10 = generate(10);
+const add10000 = generate(10000);
 
 console.time('measure');
 let result = 0;
-for (let i = 0; i < 5e6; ++i) {
-    result += add10(i);
+for (let i = 0; i < 5000; ++i) {
+    result += add10000(i);
 }
 console.timeEnd('measure');

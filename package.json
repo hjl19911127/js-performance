@@ -7,12 +7,13 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "node src/case1.js",
         "start:no-opt": "node --no-opt src/case1.js",
-        "start:opt-verbose": "node --trace-opt --trace-opt-verbose src/case1.js",
-        "start:bytecode-add10": "node --print-bytecode --print-bytecode-filter=add10 src/case1.js > output.txt",
-        "start:opt-add10": "node --print-opt-code --print-opt-code-filter=add10 src/case1.js > output1.txt",
-        "start:gc-add10": "node --trace_gc src/case1.js > output-gc.txt",
-        "start:prof-add10": "node --prof src/case1.js > output-prof.txt",
-        "start:process-prof": "node --prof-process --preprocess isolate-000001D40279DE80-v8.log > prof.json"
+        "start:opt-verbose": "node --trace-opt --trace-opt-verbose src/case-func10.js",
+        "start:bytecode": "node --print-bytecode --print-bytecode-filter=func10 src/case-func10.js > output/output-bytecode.txt",
+        "start:opt": "node --print-opt-code --print-opt-code-filter=func10 src/case-func10.js > output/output-opt.txt",
+        "start:shape": "node --allow-natives-syntax src/case-shape.js",
+        "start:gc-add10": "node --trace_gc src/case-func10.js > output/output-gc.txt",
+        "start:prof-add10": "node --prof src/case-func10.js > output/output-prof.txt",
+        "start:process-prof": "node --prof-process --preprocess isolate-000001D40279DE80-v8.log > output/prof.json"
     },
     "repository": {
         "type": "git",

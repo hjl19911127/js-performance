@@ -1,0 +1,227 @@
+--- Raw source ---
+(x) { var asdasdasd = 3;return asdasdasd+x+x+x+x+x+x+x+x+x+x; })
+
+--- Optimized code ---
+optimization_id = 0
+source_position = 16
+kind = OPTIMIZED_FUNCTION
+name = func10
+stack_slots = 5
+compiler = turbofan
+address = 0000005A570FE368
+
+Instructions (size = 356)
+000002F8C17C4320     0  488b59e0       REX.W movq rbx,[rcx-0x20]
+000002F8C17C4324     4  f6430f01       testb [rbx+0xf],0x1
+000002F8C17C4328     8  740d           jz 000002F8C17C4337  <+0x17>
+000002F8C17C432A     a  49ba90e55ed3f67f0000 REX.W movq r10,00007FF6D35EE590  (CompileLazyDeoptimizedCode)
+000002F8C17C4334    14  41ffe2         jmp r10
+000002F8C17C4337    17  55             push rbp
+000002F8C17C4338    18  4889e5         REX.W movq rbp,rsp
+000002F8C17C433B    1b  56             push rsi
+000002F8C17C433C    1c  57             push rdi
+000002F8C17C433D    1d  4883ec08       REX.W subq rsp,0x8
+000002F8C17C4341    21  488975e8       REX.W movq [rbp-0x18],rsi
+000002F8C17C4345    25  493ba530120000 REX.W cmpq rsp,[r13+0x1230] (root (stack_limit))
+000002F8C17C434C    2c  0f8676000000   jna 000002F8C17C43C8  <+0xa8>
+000002F8C17C4352    32  488b5510       REX.W movq rdx,[rbp+0x10]
+000002F8C17C4356    36  f6c201         testb rdx,0x1
+000002F8C17C4359    39  0f8592000000   jnz 000002F8C17C43F1  <+0xd1>
+000002F8C17C435F    3f  488bca         REX.W movq rcx,rdx
+000002F8C17C4362    42  48c1e920       REX.W shrq rcx, 32
+000002F8C17C4366    46  488bf9         REX.W movq rdi,rcx
+000002F8C17C4369    49  83c703         addl rdi,0x3
+000002F8C17C436C    4c  0f808b000000   jo 000002F8C17C43FD  <+0xdd>
+000002F8C17C4372    52  03f9           addl rdi,rcx
+000002F8C17C4374    54  0f808f000000   jo 000002F8C17C4409  <+0xe9>
+000002F8C17C437A    5a  03f9           addl rdi,rcx
+000002F8C17C437C    5c  0f8093000000   jo 000002F8C17C4415  <+0xf5>
+000002F8C17C4382    62  03f9           addl rdi,rcx
+000002F8C17C4384    64  0f8097000000   jo 000002F8C17C4421  <+0x101>
+000002F8C17C438A    6a  03f9           addl rdi,rcx
+000002F8C17C438C    6c  0f809b000000   jo 000002F8C17C442D  <+0x10d>
+000002F8C17C4392    72  03f9           addl rdi,rcx
+000002F8C17C4394    74  0f809f000000   jo 000002F8C17C4439  <+0x119>
+000002F8C17C439A    7a  03f9           addl rdi,rcx
+000002F8C17C439C    7c  0f80a3000000   jo 000002F8C17C4445  <+0x125>
+000002F8C17C43A2    82  03f9           addl rdi,rcx
+000002F8C17C43A4    84  0f80a7000000   jo 000002F8C17C4451  <+0x131>
+000002F8C17C43AA    8a  03f9           addl rdi,rcx
+000002F8C17C43AC    8c  0f80ab000000   jo 000002F8C17C445D  <+0x13d>
+000002F8C17C43B2    92  03cf           addl rcx,rdi
+000002F8C17C43B4    94  0f80af000000   jo 000002F8C17C4469  <+0x149>
+000002F8C17C43BA    9a  48c1e120       REX.W shlq rcx, 32
+000002F8C17C43BE    9e  488bc1         REX.W movq rax,rcx
+000002F8C17C43C1    a1  488be5         REX.W movq rsp,rbp
+000002F8C17C43C4    a4  5d             pop rbp
+000002F8C17C43C5    a5  c21000         ret 0x10
+000002F8C17C43C8    a8  48bb3070ead2f67f0000 REX.W movq rbx,00007FF6D2EA7030
+000002F8C17C43D2    b2  48be3901806ecd030000 REX.W movq rsi,000003CD6E800139    ;; object: 0x03cd6e800139 <NativeContext[248]>
+000002F8C17C43DC    bc  33c0           xorl rax,rax
+000002F8C17C43DE    be  49baf09767d3f67f0000 REX.W movq r10,00007FF6D36797F0  (CEntry_Return1_DontSaveFPRegs_ArgvOnStack_NoBuiltinExit)
+000002F8C17C43E8    c8  41ffd2         call r10
+000002F8C17C43EB    cb  e962ffffff     jmp 000002F8C17C4352  <+0x32>
+000002F8C17C43F0    d0  90             nop
+000002F8C17C43F1    d1  49c7c500000000 REX.W movq r13,0x0    ;; debug: deopt position, script offset '56'
+                                                             ;; debug: deopt position, inlining id '-1'
+                                                             ;; debug: deopt reason 'not a Smi'
+                                                             ;; debug: deopt index 0
+000002F8C17C43F8    d8  e843dc0300     call 000002F8C1802040    ;; eager deoptimization bailout
+000002F8C17C43FD    dd  49c7c501000000 REX.W movq r13,0x1    ;; debug: deopt position, script offset '56'
+                                                             ;; debug: deopt position, inlining id '-1'
+                                                             ;; debug: deopt reason 'overflow'
+                                                             ;; debug: deopt index 1
+000002F8C17C4404    e4  e837dc0300     call 000002F8C1802040    ;; eager deoptimization bailout
+000002F8C17C4409    e9  49c7c502000000 REX.W movq r13,0x2    ;; debug: deopt position, script offset '58'
+                                                             ;; debug: deopt position, inlining id '-1'
+                                                             ;; debug: deopt reason 'overflow'
+                                                             ;; debug: deopt index 2
+000002F8C17C4410    f0  e82bdc0300     call 000002F8C1802040    ;; eager deoptimization bailout
+000002F8C17C4415    f5  49c7c503000000 REX.W movq r13,0x3    ;; debug: deopt position, script offset '60'
+                                                             ;; debug: deopt position, inlining id '-1'
+                                                             ;; debug: deopt reason 'overflow'
+                                                             ;; debug: deopt index 3
+000002F8C17C441C    fc  e81fdc0300     call 000002F8C1802040    ;; eager deoptimization bailout
+000002F8C17C4421   101  49c7c504000000 REX.W movq r13,0x4    ;; debug: deopt position, script offset '62'
+                                                             ;; debug: deopt position, inlining id '-1'
+                                                             ;; debug: deopt reason 'overflow'
+                                                             ;; debug: deopt index 4
+000002F8C17C4428   108  e813dc0300     call 000002F8C1802040    ;; eager deoptimization bailout
+000002F8C17C442D   10d  49c7c505000000 REX.W movq r13,0x5    ;; debug: deopt position, script offset '64'
+                                                             ;; debug: deopt position, inlining id '-1'
+                                                             ;; debug: deopt reason 'overflow'
+                                                             ;; debug: deopt index 5
+000002F8C17C4434   114  e807dc0300     call 000002F8C1802040    ;; eager deoptimization bailout
+000002F8C17C4439   119  49c7c506000000 REX.W movq r13,0x6    ;; debug: deopt position, script offset '66'
+                                                             ;; debug: deopt position, inlining id '-1'
+                                                             ;; debug: deopt reason 'overflow'
+                                                             ;; debug: deopt index 6
+000002F8C17C4440   120  e8fbdb0300     call 000002F8C1802040    ;; eager deoptimization bailout
+000002F8C17C4445   125  49c7c507000000 REX.W movq r13,0x7    ;; debug: deopt position, script offset '68'
+                                                             ;; debug: deopt position, inlining id '-1'
+                                                             ;; debug: deopt reason 'overflow'
+                                                             ;; debug: deopt index 7
+000002F8C17C444C   12c  e8efdb0300     call 000002F8C1802040    ;; eager deoptimization bailout
+000002F8C17C4451   131  49c7c508000000 REX.W movq r13,0x8    ;; debug: deopt position, script offset '70'
+                                                             ;; debug: deopt position, inlining id '-1'
+                                                             ;; debug: deopt reason 'overflow'
+                                                             ;; debug: deopt index 8
+000002F8C17C4458   138  e8e3db0300     call 000002F8C1802040    ;; eager deoptimization bailout
+000002F8C17C445D   13d  49c7c509000000 REX.W movq r13,0x9    ;; debug: deopt position, script offset '72'
+                                                             ;; debug: deopt position, inlining id '-1'
+                                                             ;; debug: deopt reason 'overflow'
+                                                             ;; debug: deopt index 9
+000002F8C17C4464   144  e8d7db0300     call 000002F8C1802040    ;; eager deoptimization bailout
+000002F8C17C4469   149  49c7c50a000000 REX.W movq r13,0xa    ;; debug: deopt position, script offset '74'
+                                                             ;; debug: deopt position, inlining id '-1'
+                                                             ;; debug: deopt reason 'overflow'
+                                                             ;; debug: deopt index 10
+000002F8C17C4470   150  e8cbdb0300     call 000002F8C1802040    ;; eager deoptimization bailout
+000002F8C17C4475   155  49c7c50b000000 REX.W movq r13,0xb    ;; debug: deopt position, script offset '16'
+                                                             ;; debug: deopt position, inlining id '-1'
+                                                             ;; debug: deopt reason '(unknown)'
+                                                             ;; debug: deopt index 11
+000002F8C17C447C   15c  e8bfdb0700     call 000002F8C1842040    ;; lazy deoptimization bailout
+000002F8C17C4481   161  0f1f00         nop
+measure: 54.780ms
+
+Source positions:
+ pc offset  position
+         0        16
+        32        56
+        52        58
+        5a        60
+        62        62
+        6a        64
+        72        66
+        7a        68
+        82        70
+        8a        72
+        92        74
+        9a        77
+        a8        16
+
+Inlined functions (count = 0)
+
+Deoptimization Input Data (deopt points = 12)
+ index  bytecode-offset    pc
+     0                0    NA 
+     1                0    NA 
+     2                0    NA 
+     3                0    NA 
+     4                0    NA 
+     5                0    NA 
+     6                0    NA 
+     7                0    NA 
+     8                0    NA 
+     9                0    NA 
+    10                0    NA 
+    11                0    cb 
+
+Safepoints (size = 23)
+000002F8C17C43EB      cb   155  10000 (sp -> fp)      11
+
+RelocInfo (size = 279)
+000002F8C17C43D4  embedded object  (0x03cd6e800139 <NativeContext[248]>)
+000002F8C17C43F1  deopt script offset  (56)
+000002F8C17C43F1  deopt inlining id  (-1)
+000002F8C17C43F1  deopt reason  (not a Smi)
+000002F8C17C43F1  deopt index
+000002F8C17C43F9  runtime entry  (eager deoptimization bailout)
+000002F8C17C43FD  deopt script offset  (56)
+000002F8C17C43FD  deopt inlining id  (-1)
+000002F8C17C43FD  deopt reason  (overflow)
+000002F8C17C43FD  deopt index
+000002F8C17C4405  runtime entry  (eager deoptimization bailout)
+000002F8C17C4409  deopt script offset  (58)
+000002F8C17C4409  deopt inlining id  (-1)
+000002F8C17C4409  deopt reason  (overflow)
+000002F8C17C4409  deopt index
+000002F8C17C4411  runtime entry  (eager deoptimization bailout)
+000002F8C17C4415  deopt script offset  (60)
+000002F8C17C4415  deopt inlining id  (-1)
+000002F8C17C4415  deopt reason  (overflow)
+000002F8C17C4415  deopt index
+000002F8C17C441D  runtime entry  (eager deoptimization bailout)
+000002F8C17C4421  deopt script offset  (62)
+000002F8C17C4421  deopt inlining id  (-1)
+000002F8C17C4421  deopt reason  (overflow)
+000002F8C17C4421  deopt index
+000002F8C17C4429  runtime entry  (eager deoptimization bailout)
+000002F8C17C442D  deopt script offset  (64)
+000002F8C17C442D  deopt inlining id  (-1)
+000002F8C17C442D  deopt reason  (overflow)
+000002F8C17C442D  deopt index
+000002F8C17C4435  runtime entry  (eager deoptimization bailout)
+000002F8C17C4439  deopt script offset  (66)
+000002F8C17C4439  deopt inlining id  (-1)
+000002F8C17C4439  deopt reason  (overflow)
+000002F8C17C4439  deopt index
+000002F8C17C4441  runtime entry  (eager deoptimization bailout)
+000002F8C17C4445  deopt script offset  (68)
+000002F8C17C4445  deopt inlining id  (-1)
+000002F8C17C4445  deopt reason  (overflow)
+000002F8C17C4445  deopt index
+000002F8C17C444D  runtime entry  (eager deoptimization bailout)
+000002F8C17C4451  deopt script offset  (70)
+000002F8C17C4451  deopt inlining id  (-1)
+000002F8C17C4451  deopt reason  (overflow)
+000002F8C17C4451  deopt index
+000002F8C17C4459  runtime entry  (eager deoptimization bailout)
+000002F8C17C445D  deopt script offset  (72)
+000002F8C17C445D  deopt inlining id  (-1)
+000002F8C17C445D  deopt reason  (overflow)
+000002F8C17C445D  deopt index
+000002F8C17C4465  runtime entry  (eager deoptimization bailout)
+000002F8C17C4469  deopt script offset  (74)
+000002F8C17C4469  deopt inlining id  (-1)
+000002F8C17C4469  deopt reason  (overflow)
+000002F8C17C4469  deopt index
+000002F8C17C4471  runtime entry  (eager deoptimization bailout)
+000002F8C17C4475  deopt script offset  (16)
+000002F8C17C4475  deopt inlining id  (-1)
+000002F8C17C4475  deopt reason  ((unknown))
+000002F8C17C4475  deopt index
+000002F8C17C447D  runtime entry  (lazy deoptimization bailout)
+
+--- End code ---
