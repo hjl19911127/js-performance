@@ -4,7 +4,6 @@ function getX(obj) {
 
 console.time('measure');
 for (var i = 0; i <= 5e6; i++) {
-    // console.log(String.fromCharCode(i))
-    getX({ x: 1 });
+    getX({ x: i });
 }
 console.timeEnd('measure');

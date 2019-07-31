@@ -1,0 +1,190 @@
+--- Raw source ---
+function getX(obj) {
+    return obj.x;
+}
+
+console.time('measure');
+for (var i = 0; i <= 5e6; i++) {
+    getX({ x: i });
+}
+console.timeEnd('measure');
+
+--- Optimized code ---
+optimization_id = 0
+source_position = 0
+kind = OPTIMIZED_FUNCTION
+stack_slots = 13
+compiler = turbofan
+address = 000002B31AF6E9A1
+Body (size = 332)
+Instructions (size = 292)
+000002B31AF6E9E0     0  488b59e0       REX.W movq rbx,[rcx-0x20]
+000002B31AF6E9E4     4  f6430f01       testb [rbx+0xf],0x1
+000002B31AF6E9E8     8  0f85323cf2ff   jnz 000002B31AE92620  (CompileLazyDeoptimizedCode)    ;; code: Builtin::CompileLazyDeoptimizedCode
+000002B31AF6E9EE     e  55             push rbp
+000002B31AF6E9EF     f  4889e5         REX.W movq rbp,rsp
+000002B31AF6E9F2    12  56             push rsi
+000002B31AF6E9F3    13  57             push rdi
+000002B31AF6E9F4    14  48ba0000000027000000 REX.W movq rdx,0000002700000000
+000002B31AF6E9FE    1e  e8fd23f3ff     call 000002B31AEA0E00  (Abort)    ;; code: Builtin::Abort
+000002B31AF6EA03    23  cc             int3l
+000002B31AF6EA04    24  4883ec10       REX.W subq rsp,0x10
+000002B31AF6EA08    28  488975b0       REX.W movq [rbp-0x50],rsi
+000002B31AF6EA0C    2c  488b45d0       REX.W movq rax,[rbp-0x30]
+000002B31AF6EA10    30  a801           test al,0x1
+000002B31AF6EA12    32  0f85ce000000   jnz 000002B31AF6EAE6  <+0x106>
+000002B31AF6EA18    38  48bb00000000404b4c00 REX.W movq rbx,004C4B4000000000
+000002B31AF6EA22    42  483bc3         REX.W cmpq rax,rbx
+000002B31AF6EA25    45  0f8f66000000   jg 000002B31AF6EA91  <+0xb1>
+000002B31AF6EA2B    4b  493ba5c00f0000 REX.W cmpq rsp,[r13+0xfc0]
+000002B31AF6EA32    52  0f866c000000   jna 000002B31AF6EAA4  <+0xc4>
+000002B31AF6EA38    58  488b55d8       REX.W movq rdx,[rbp-0x28]
+000002B31AF6EA3C    5c  48bb612548ce4f030000 REX.W movq rbx,0000034FCE482561    ;; object: 0x034fce482561 <JSFunction getX (sfi = 000003CA4A5D69B9)>
+000002B31AF6EA46    66  483bda         REX.W cmpq rbx,rdx
+000002B31AF6EA49    69  0f859c000000   jnz 000002B31AF6EAEB  <+0x10b>
+000002B31AF6EA4F    6f  488bd8         REX.W movq rbx,rax
+000002B31AF6EA52    72  48c1eb20       REX.W shrq rbx, 32
+000002B31AF6EA56    76  83c301         addl rbx,0x1
+000002B31AF6EA59    79  0f8091000000   jo 000002B31AF6EAF0  <+0x110>
+000002B31AF6EA5F    7f  90             nop
+000002B31AF6EA60    80  81fb404b4c00   cmpl rbx,0x4c4b40
+000002B31AF6EA66    86  0f8f25000000   jg 000002B31AF6EA91  <+0xb1>
+000002B31AF6EA6C    8c  493ba5c00f0000 REX.W cmpq rsp,[r13+0xfc0]
+000002B31AF6EA73    93  0f8649000000   jna 000002B31AF6EAC2  <+0xe2>
+000002B31AF6EA79    99  488bc3         REX.W movq rax,rbx
+000002B31AF6EA7C    9c  48c1e020       REX.W shlq rax, 32
+000002B31AF6EA80    a0  488bcb         REX.W movq rcx,rbx
+000002B31AF6EA83    a3  83c101         addl rcx,0x1
+000002B31AF6EA86    a6  0f8069000000   jo 000002B31AF6EAF5  <+0x115>
+000002B31AF6EA8C    ac  488bd9         REX.W movq rbx,rcx
+000002B31AF6EA8F    af  ebcf           jmp 000002B31AF6EA60  <+0x80>
+000002B31AF6EA91    b1  48b879ebe904ca030000 REX.W movq rax,000003CA04E9EB79    ;; object: 0x03ca04e9eb79 <PropertyCell name=0x01d91d898911 <String[7]: console> value=0x034fce4834f9 <Console map = 00000104E8654799>>
+000002B31AF6EA9B    bb  488b4017       REX.W movq rax,[rax+0x17]
+000002B31AF6EA9F    bf  e8b0551100     call 000002B31B084054    ;; debug: deopt position, script offset '138'
+                                                             ;; debug: deopt position, inlining id '-1'
+                                                             ;; debug: deopt reason 'Insufficient type feedback for generic named access'
+                                                             ;; debug: deopt index 4
+                                                             ;; soft deoptimization bailout 4
+000002B31AF6EAA4    c4  48bb00d25919f77f0000 REX.W movq rbx,00007FF71959D200
+000002B31AF6EAAE    ce  33c0           xorl rax,rax
+000002B31AF6EAB0    d0  488b75b0       REX.W movq rsi,[rbp-0x50]
+000002B31AF6EAB4    d4  e8a7daf6ff     call 000002B31AEDC560  (CEntry_Return1_DontSaveFPRegs_ArgvOnStack_NoBuiltinExit)    ;; code: Builtin::CEntry_Return1_DontSaveFPRegs_ArgvOnStack_NoBuiltinExit
+000002B31AF6EAB9    d9  488b45d0       REX.W movq rax,[rbp-0x30]
+000002B31AF6EABD    dd  e976ffffff     jmp 000002B31AF6EA38  <+0x58>
+000002B31AF6EAC2    e2  48895da8       REX.W movq [rbp-0x58],rbx
+000002B31AF6EAC6    e6  48bb00d25919f77f0000 REX.W movq rbx,00007FF71959D200
+000002B31AF6EAD0    f0  33c0           xorl rax,rax
+000002B31AF6EAD2    f2  488b75b0       REX.W movq rsi,[rbp-0x50]
+000002B31AF6EAD6    f6  e885daf6ff     call 000002B31AEDC560  (CEntry_Return1_DontSaveFPRegs_ArgvOnStack_NoBuiltinExit)    ;; code: Builtin::CEntry_Return1_DontSaveFPRegs_ArgvOnStack_NoBuiltinExit
+000002B31AF6EADB    fb  488b55d8       REX.W movq rdx,[rbp-0x28]
+000002B31AF6EADF    ff  488b5da8       REX.W movq rbx,[rbp-0x58]
+000002B31AF6EAE3   103  eb94           jmp 000002B31AF6EA79  <+0x99>
+000002B31AF6EAE5   105  90             nop
+000002B31AF6EAE6   106  e855550100     call 000002B31AF84040    ;; debug: deopt position, script offset '90'
+                                                             ;; debug: deopt position, inlining id '-1'
+                                                             ;; debug: deopt reason 'not a Smi'
+                                                             ;; debug: deopt index 0
+                                                             ;; deoptimization bailout 0
+000002B31AF6EAEB   10b  e855550100     call 000002B31AF84045    ;; debug: deopt position, script offset '110'
+                                                             ;; debug: deopt position, inlining id '-1'
+                                                             ;; debug: deopt reason 'wrong call target'
+                                                             ;; debug: deopt index 1
+                                                             ;; deoptimization bailout 1
+000002B31AF6EAF0   110  e855550100     call 000002B31AF8404A    ;; debug: deopt position, script offset '99'
+                                                             ;; debug: deopt position, inlining id '-1'
+                                                             ;; debug: deopt reason 'overflow'
+                                                             ;; debug: deopt index 2
+                                                             ;; deoptimization bailout 2
+000002B31AF6EAF5   115  e855550100     call 000002B31AF8404F    ;; debug: deopt position, script offset '99'
+                                                             ;; debug: deopt position, inlining id '-1'
+                                                             ;; debug: deopt reason 'overflow'
+                                                             ;; debug: deopt index 3
+                                                             ;; deoptimization bailout 3
+000002B31AF6EAFA   11a  e85a550900     call 000002B31B004059    ;; debug: deopt position, script offset '72'
+                                                             ;; debug: deopt position, inlining id '-1'
+                                                             ;; debug: deopt reason '(unknown)'
+                                                             ;; debug: deopt index 5
+                                                             ;; lazy deoptimization bailout 5
+000002B31AF6EAFF   11f  e85a550900     call 000002B31B00405E    ;; debug: deopt position, script offset '72'
+                                                             ;; debug: deopt position, inlining id '-1'
+                                                             ;; debug: deopt reason '(unknown)'
+                                                             ;; debug: deopt index 6
+                                                             ;; lazy deoptimization bailout 6
+measure: 8.904ms
+
+Source positions:
+ pc offset  position
+         0         0
+        28        90
+        4b        72
+        58       110
+        6f        99
+        80        90
+        8c        72
+        99       120
+        a0        99
+        b1       130
+        bf       138
+        c4        72
+
+Inlined functions (count = 1)
+ 0x03ca4a5d69b9 <SharedFunctionInfo getX>
+
+Deoptimization Input Data (deopt points = 7)
+ index  bytecode-offset    pc
+     0               36    NA 
+     1               53    NA 
+     2               53    NA 
+     3               53    NA 
+     4               71    NA 
+     5               41    d9 
+     6               41    fb 
+
+Safepoints (size = 40)
+000002B31AF6EAB9      d9   11a  0100011000000 (sp -> fp)       5
+000002B31AF6EADB      fb   11f  0100001000000 (sp -> fp)       6
+
+RelocInfo (size = 162)
+000002B31AF6E9EA  code target (BUILTIN CompileLazyDeoptimizedCode)  (000002B31AE92620)
+000002B31AF6E9FF  code target (BUILTIN Abort)  (000002B31AEA0E00)
+000002B31AF6EA3E  embedded object  (0x034fce482561 <JSFunction getX (sfi = 000003CA4A5D69B9)>)
+000002B31AF6EA93  embedded object  (0x03ca04e9eb79 <PropertyCell name=0x01d91d898911 <String[7]: console> value=0x034fce4834f9 <Console map = 00000104E8654799>>)
+000002B31AF6EA9F  deopt script offset  (138)
+000002B31AF6EA9F  deopt inlining id  (-1)
+000002B31AF6EA9F  deopt reason  (Insufficient type feedback for generic named access)
+000002B31AF6EA9F  deopt index
+000002B31AF6EAA0  runtime entry
+000002B31AF6EAB5  code target (BUILTIN CEntry_Return1_DontSaveFPRegs_ArgvOnStack_NoBuiltinExit)  (000002B31AEDC560)
+000002B31AF6EAD7  code target (BUILTIN CEntry_Return1_DontSaveFPRegs_ArgvOnStack_NoBuiltinExit)  (000002B31AEDC560)
+000002B31AF6EAE6  deopt script offset  (90)
+000002B31AF6EAE6  deopt inlining id  (-1)
+000002B31AF6EAE6  deopt reason  (not a Smi)
+000002B31AF6EAE6  deopt index
+000002B31AF6EAE7  runtime entry  (deoptimization bailout 0)
+000002B31AF6EAEB  deopt script offset  (110)
+000002B31AF6EAEB  deopt inlining id  (-1)
+000002B31AF6EAEB  deopt reason  (wrong call target)
+000002B31AF6EAEB  deopt index
+000002B31AF6EAEC  runtime entry  (deoptimization bailout 1)
+000002B31AF6EAF0  deopt script offset  (99)
+000002B31AF6EAF0  deopt inlining id  (-1)
+000002B31AF6EAF0  deopt reason  (overflow)
+000002B31AF6EAF0  deopt index
+000002B31AF6EAF1  runtime entry  (deoptimization bailout 2)
+000002B31AF6EAF5  deopt script offset  (99)
+000002B31AF6EAF5  deopt inlining id  (-1)
+000002B31AF6EAF5  deopt reason  (overflow)
+000002B31AF6EAF5  deopt index
+000002B31AF6EAF6  runtime entry  (deoptimization bailout 3)
+000002B31AF6EAFA  deopt script offset  (72)
+000002B31AF6EAFA  deopt inlining id  (-1)
+000002B31AF6EAFA  deopt reason  ((unknown))
+000002B31AF6EAFA  deopt index
+000002B31AF6EAFB  runtime entry
+000002B31AF6EAFF  deopt script offset  (72)
+000002B31AF6EAFF  deopt inlining id  (-1)
+000002B31AF6EAFF  deopt reason  ((unknown))
+000002B31AF6EAFF  deopt index
+000002B31AF6EB00  runtime entry
+
+--- End code ---
