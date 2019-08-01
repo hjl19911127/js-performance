@@ -1,20 +1,24 @@
 function FreezeObj() {
     this.x = 0;
-    // Object.preventExtensions(this);
+    Object.freeze(this);
     // this.x = 0.1;
 }
 
 var a = new FreezeObj();
 var b = new FreezeObj();
-%DebugPrint(%HaveSameMap(a,b));
+// %DebugPrint(%HaveSameMap(a,b));
+%DebugPrint(a);
+%DebugPrint(b);
 // true
 
 a.x = 0.1;
-%DebugPrint(%HaveSameMap(a,b));
+%DebugPrint(a);
+%DebugPrint(b);
 // false
 
-b.x;
-%DebugPrint(%HaveSameMap(a,b));
+b.x = 0.1;
+%DebugPrint(a);
+%DebugPrint(b);
 // true
 
 
