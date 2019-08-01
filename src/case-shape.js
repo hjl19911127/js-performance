@@ -1,5 +1,12 @@
-var a = { x: 1, y: 2, z: 3 };
-var b = { y: 3, x: 2, z: 4 };
+var a = { x: 1, y: 2 };
+var b = { x: 3, y: 4 };
+%DebugPrint(%HaveSameMap(a,b));
+// true
 
-%DebugPrint(a);
-%DebugPrint(b);
+a.x = 0.1;
+%DebugPrint(%HaveSameMap(a,b));
+// false
+
+b.x = 0.1;
+%DebugPrint(%HaveSameMap(a,b));
+// true

@@ -1,39 +1,39 @@
 {
-  "name": "js-performance",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/case1.js",
-    "start:no-opt": "node --no-opt src/case1.js",
-    "start:opt-test": "node --trace-opt src/case-func10.js > output/output-trace-opt.txt",
-    "start:opt-verbose": "node --print-opt-source --trace-opt --trace-opt-verbose --trace-interrupts src/case-func10.js > output/output-functioncall.txt",
-    "start:bytecode": "node --print-bytecode --print-bytecode-filter=func10 src/case-func10.js > output/output-bytecode.txt",
-    "start:bytecode-func10000": "node --print-bytecode --print-bytecode-filter=func10000 src/case-func10000.js > output/output-bytecode-func10000.txt",
-    "start:opt": "node --print-opt-code --print-opt-code-filter=func10 src/case-func10.js > output/output-opt.txt",
-    "start:shape": "node --allow-natives-syntax src/case-shape.js",
-    "start:gc-func10": "node --trace_gc src/case-func10.js > output/output-gc.txt",
-    "start:prof-func10": "node --prof src/case-func10.js > output/output-prof.txt",
-    "start:process-prof": "node --prof-process --preprocess isolate-000001D40279DE80-v8.log > output/prof.json",
-    "start:webpack": "webpack --config=./src/webpack/webpack.config.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hjl19911127/js-performance.git"
-  },
-  "keywords": [
-    "performance",
-    "test"
-  ],
-  "author": "huangjialiang",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/hjl19911127/js-performance/issues"
-  },
-  "homepage": "https://github.com/hjl19911127/js-performance#readme",
-  "devDependencies": {
-    "webpack": "^4.38.0",
-    "webpack-cli": "^3.3.6"
-  }
+    "name": "js-performance",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node src/case1.js",
+        "start:no-opt": "node --no-opt src/case1.js",
+        "start:opt-test": "node --trace-opt src/case-func10.js > output/output-trace-opt.txt",
+        "start:opt-verbose": "node --print-opt-source --trace-opt --trace-opt-verbose --trace-interrupts src/case-func10.js > output/output-functioncall.txt",
+        "start:bytecode": "node --print-bytecode --print-bytecode-filter=func10 src/case-func10.js > output/output-bytecode.txt",
+        "start:bytecode-func10000": "node --print-bytecode --print-bytecode-filter=func10000 src/case-func10000.js > output/output-bytecode-func10000.txt",
+        "start:opt": "node --print-opt-code --print-opt-code-filter=func10 src/case-func10.js > output/output-opt.txt",
+        "start:gc-func10": "node --trace_gc src/case-func10.js > output/output-gc.txt",
+        "start:prof-func10": "node --prof src/case-func10.js > output/output-prof.txt",
+        "start:process-prof": "node --prof-process --preprocess isolate-000001D40279DE80-v8.log > output/prof.json",
+        "start:shape": "node --allow-natives-syntax src/case-shape.js",
+        "start:ic-bug": "node --allow-natives-syntax src/case-ic-bug.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/hjl19911127/js-performance.git"
+    },
+    "keywords": [
+        "performance",
+        "test"
+    ],
+    "author": "huangjialiang",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/hjl19911127/js-performance/issues"
+    },
+    "homepage": "https://github.com/hjl19911127/js-performance#readme",
+    "devDependencies": {
+        "webpack": "^4.38.0",
+        "webpack-cli": "^3.3.6"
+    }
 }
