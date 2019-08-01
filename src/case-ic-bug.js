@@ -1,6 +1,6 @@
 function FreezeObj() {
     this.x = 0;
-    Object.freeze(this);
+    Object.preventExtensions(this);
     // this.x = 0.1;
 }
 
