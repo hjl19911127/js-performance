@@ -33,7 +33,7 @@
     },
     "homepage": "https://github.com/hjl19911127/js-performance#readme",
     "devDependencies": {
-        "webpack": "^4.38.0",
-        "webpack-cli": "^3.3.6"
+        "webpack": "^5.75.0",
+        "webpack-cli": "^5.0.1"
     }
 }
